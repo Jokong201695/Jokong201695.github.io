@@ -511,8 +511,8 @@
   
 
   
-<!--
--->
+
+
 <script>
 NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
   var GUEST = ['nick', 'mail', 'link'];
@@ -536,14 +536,14 @@ NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
     recordIP: false,
     serverURLs: ''
   });
-  //新增以下代码即可，可以移除.info下所有子节点。
-  var infoEle = document.querySelector('#comments .info');
-  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0){
-    infoEle.childNodes.forEach(function(item) {
-      item.parentNode.removeChild(item);
-    });
-  }
 }, window.Valine);
+//新增以下代码即可，可以移除.info下所有子节点。
+var infoEle = document.querySelector('#comments .info');
+if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0){
+  infoEle.childNodes.forEach(function(item) {
+    item.parentNode.removeChild(item);
+  });
+}
 </script>
 
   <!-- 页面点击小红心 -->
