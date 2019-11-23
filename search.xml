@@ -3,9 +3,54 @@
   <entry>
     <title>信息收集思路总结</title>
     <url>/2019/11/22/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<p>信息收集是指通过各种方式获取所需要的信息，以便我们在后续的渗透过程更好的进行。最简单的比如说目标站点的IP、中间件、脚本语言、端口、邮箱等等。我觉得信息收集在我们渗透测试的过程当中，是最重要的一环，这一环节没做好，没收集到足够多的可利用的信息，我们很难进行下一步的操作。</p>
+<a id="more"></a>
+
+<p>信息收集主要收集什么呢？该如何进行收集呢？</p>
+<h2 id="一、whois信息"><a href="#一、whois信息" class="headerlink" title="一、whois信息"></a>一、whois信息</h2><p>很多网站上都可以收集到whois信息，比如说</p>
+<p>国外的who.is：<a href="https://who.is/" target="_blank" rel="noopener">https://who.is/</a><br>站长之家：<a href="http://whois.chinaz.com/" target="_blank" rel="noopener">http://whois.chinaz.com/</a><br>爱站：<a href="https://whois.aizhan.com/" target="_blank" rel="noopener">https://whois.aizhan.com/</a><br>微步：<a href="https://x.threatbook.cn/" target="_blank" rel="noopener">https://x.threatbook.cn/</a> </p>
+<p>这些网站都可以收集whois信息，而且还很全面，我主要关注：注册商、注册人、邮件、DNS解析服务器、注册人联系电话。<br>有需要的还可以查企业的备案信息，主要有三种方式</p>
+<p>天眼查：<a href="https://www.tianyancha.com/" target="_blank" rel="noopener">https://www.tianyancha.com/</a><br>ICP备案查询网：<a href="http://www.beianbeian.com/" target="_blank" rel="noopener">http://www.beianbeian.com/</a><br>国家企业信用信息公示系统：<a href="http://www.gsxt.gov.cn/index.html" target="_blank" rel="noopener">http://www.gsxt.gov.cn/index.html</a>   </p>
+<p>注意：国外的服务器一般来说是查不到的，因为他们不需要备案。国内的基本上都可以查到。<br><img src="/2019/11/22/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/1.png" alt="1"></p>
+<ul>
+<li>小技巧：如果在站长之家上隐藏了信息，可在 who.is 上再次查看  </li>
+</ul>
+<h2 id="二、子域名"><a href="#二、子域名" class="headerlink" title="二、子域名"></a>二、子域名</h2><p>子域名是在顶级域名下的域名，收集的子域名越多，我们测试的目标就越多，渗透的成功率也越大。往往在主站找不到突破口的时候，我们从子域名入手，有时候可能会发现惊喜！<br>大佬们都有自己用的顺手的一套方法或工具  </p>
+<p>我就简单收集了一些  </p>
+<ul>
+<li><p>1、Google语法<br>可以利用Google和Bing这样的搜索引擎进行搜索查询（site:<a href="http://www.xxx.com）" target="_blank" rel="noopener">www.xxx.com）</a><br>Google还支持额外的减号运算符，以排除我们对“网站:wikimedia.org -www -store ”不感兴趣的子域名。<br><img src="/2019/11/22/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/2.png" alt="2"></p>
+</li>
+<li><p>2、有许多第三方服务聚合了大量的DNS数据集，并通过它们来检索给定域名的子域名。<br>（1）VirusTotal：<a href="https://www.virustotal.com/#/home/search" target="_blank" rel="noopener">https://www.virustotal.com/#/home/search</a><br>（2）DNSdumpster：<a href="https://dnsdumpster.com/" target="_blank" rel="noopener">https://dnsdumpster.com/</a><br><img src="/2019/11/22/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/3.png" alt="3"></p>
+</li>
+<li><p>3、基于SSL证书查询<br>查找一个域名证书的最简单方法是使用搜索引擎来收集计算机的CT日志，并让任何搜索引擎搜索它们。前两种比较常用。<br>（1）<a href="https://crt.sh/" target="_blank" rel="noopener">https://crt.sh/</a><br>（2）<a href="https://censys.io/" target="_blank" rel="noopener">https://censys.io/</a><br>（3）<a href="https://developers.facebook.com/tools/ct/" target="_blank" rel="noopener">https://developers.facebook.com/tools/ct/</a><br>（4）<a href="https://google.com/transparencyreport/https/ct/" target="_blank" rel="noopener">https://google.com/transparencyreport/https/ct/</a><br><img src="/2019/11/22/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/4.png" alt="4"></p>
+</li>
+<li><p>4、简单的在线子域名收集（不推荐）<br>（1）<a href="https://phpinfo.me/domain/" target="_blank" rel="noopener">https://phpinfo.me/domain/</a><br>（2）<a href="http://i.links.cn/subdomain/" target="_blank" rel="noopener">http://i.links.cn/subdomain/</a>  </p>
+</li>
+<li><p>5、爆破枚举<br>这个就有很多工具可以用了，大佬们都有自己用的顺手的工具，比较常见的是：<br>（1）layer子域名挖掘机<br>（2）subDomainsBrute<br>（3）K8<br>（4）orangescan<br>（5）DNSRecon<br>这里重点推荐 subDomainsBrute 工具，可以从子域名入侵到主站。  </p>
+</li>
+<li><p>小技巧：在 <a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a> 上也可以搜索子域名，运气好的话，会有意想不到的收获。  </p>
+</li>
+</ul>
+<h2 id="三、IP段的收集"><a href="#三、IP段的收集" class="headerlink" title="三、IP段的收集"></a>三、IP段的收集</h2><p>一般IP的话，我们在收集子域名的时候，就大概知道目标网站的IP段了。<br>也可以通过whois命令获取。即通过中国互联网信息中心 <a href="http://ipwhois.cnnic.net.cn/" target="_blank" rel="noopener">http://ipwhois.cnnic.net.cn/</a> 进行查询<br><img src="/2019/11/22/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/5.png" alt="5"></p>
+<h2 id="四、开放端口探测"><a href="#四、开放端口探测" class="headerlink" title="四、开放端口探测"></a>四、开放端口探测</h2><p>很多时候，网站都会开启CDN加速，导致我们查询到的IP不是真实的IP，所以得先查询到真实的IP地址。方法有很多，百度一大把。就说我觉得最准确的几种方法吧！<br>（1）通过让服务器给你发邮件(看邮箱头源 ip )找真实 ip（最可靠）。<br>（2）通过 zmpap 全网爆破查询真实 ip（可靠）。<br>（3）通过查询域名历史 ip，<a href="http://toolbar.netcraft.com" target="_blank" rel="noopener">http://toolbar.netcraft.com</a> （借鉴）。<br>（4）通过国外冷门的 DNS 的查询：nslookup xxx.com  国外冷门 DNS 地址 （借鉴）。  </p>
+<p>收集到大量IP，那就要进行端口扫描了，看看有什么常见的漏洞。<br>最常用的就是神器Nmap了。命令：nmap -sS -Pn -p- -vv ip –script=defaultip<br>端口服务对应图：<br><img src="/2019/11/22/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/6.png" alt="6"></p>
+<p>常见端口漏洞：<br>端口    服务    说明<br>21    FTP    主要看是否支持匿名，也可跑弱口令<br>22    SSH    弱口令爆破<br>23    telnet    弱口令爆破<br>80-90    WEB    常见WEB漏洞以及一些为管理后台<br>161    snmp    public弱口令<br>389    ldap    是否为匿名访问<br>443    openssl    心脏出血以及一些WEB漏洞测试<br>445    smb    跑弱口令，检测是否有ms_08067等溢出<br>873    rsync    是否为匿名访问，也可以跑弱口令<br>1025    RPC    NFS匿名访问<br>1099    java rmi    远程命令执行漏洞<br>1433    mssql    弱口令爆破<br>1521    oracle    弱口令爆破<br>2082/2083    cpanel主机管理系统登陆    弱口令爆破<br>2222    DA虚拟主机管理系统登陆    弱口令爆破<br>2601,2604    zebra路由器    默认密码zebra<br>3128    squid代理默认端口    如果没设置口令很可能 就直接漫游内网<br>3306    mysql    弱口令爆破<br>3312/3311    kangle主机管理系统登陆    说明<br>3389    RDP    弱口令爆破，SHIFT后门，放大镜，输入法漏洞<br>4440    rundeck    web<br>4848    GlassFish    web中间件 弱口令admin/adminadmin<br>5432    postgres    弱口令爆破<br>5560,7778    iSqlPlus<br>5900,5901,5902    vnc    弱口令爆破<br>5984    CouchDB<br>6082    varnish<br>6379    redis    一般无验证，直接访问<br>7001,7002    weblogic    弱口令爆破<br>7778    Kloxo主机控制面板登录<br>8080    tomcat\jboss    弱口令爆破，jboss后台可能不验证<br>8649    ganglia<br>8080-8090    常见WEB端口<br>8083    Vestacp主机管理系统 （国外用较多）<br>8649    ganglia<br>8888    amh/LuManager 主机管理系统默认端口    说明<br>9000    fcgi    fcgi php命令执行漏洞<br>9200    elasticsearch    代码执行<br>9043    websphere    弱口令爆破<br>10000    Virtualmin/Webmin 服务器虚拟主机管理系统<br>11211    memcache    内存泄露<br>27017,28017    mongodb    未授权访问<br>50000    Upnp    SAP命令执行<br>50060,50030    hadoop    WEB    未授权访问  </p>
+<p>常见端口列表整理如下：<br>21,22,23,80-90,161,389,443,445,873,1099,1433,1521,1900,2082,2083,2222,2601,2604,3128,3306,3311,3312,3389,4440,4848,5432,5560,5900,5901,5902,6082,6379,7001-7010,7778,8080-8090,8649,8888,9000,9200,10000,11211,27017,28017,50000,50030,50060</p>
+<h2 id="五、网站架构探测"><a href="#五、网站架构探测" class="headerlink" title="五、网站架构探测"></a>五、网站架构探测</h2><p>当我们探测目标站点网站架构时，比如说：操作系统，中间件，脚本语言，数据库，服务器，web容器等等，可以使用以下方法查询。<br>（1）wappalyzer插件 ——火狐插件<br>（2）云悉：<a href="http://www.yunsee.cn/info.html" target="_blank" rel="noopener">http://www.yunsee.cn/info.html</a><br>（3）查看数据包响应头<br>（4）CMS指纹识别：<a href="http://whatweb.bugscaner.com/look/" target="_blank" rel="noopener">http://whatweb.bugscaner.com/look/</a><br>CMS指纹识别又有很多方法，比如说御剑指纹识别、Webrobot工具、whatweb工具、还有在线查询的网站等等。<br><img src="/2019/11/22/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/7.png" alt="7"></p>
+<h2 id="六、敏感文件、敏感目录探测"><a href="#六、敏感文件、敏感目录探测" class="headerlink" title="六、敏感文件、敏感目录探测"></a>六、敏感文件、敏感目录探测</h2><p>通常我们所说的敏感文件、敏感目录大概有以下几种：<br>（1）Git<br>（2）hg/Mercurial<br>（3）svn/Subversion<br>（4）bzr/Bazaar<br>（5）Cvs<br>（6）WEB-INF泄露<br>（7）备份文件泄露、配置文件泄露  </p>
+<p>敏感文件、敏感目录挖掘一般都是靠工具、脚本来找，当然大佬手工也能找得到。<br>常用的工具有：<br>（1）御剑（真的很万能，文末附上全家桶）<br>（2）爬虫（AWVS、Burpsuite等）<br>（3）搜索引擎（Google、Github等）<br>（4）wwwscan<br>（5）BBscan（一位巨佬写的python脚本：<a href="https://github.com/lijiejie/BBScan" target="_blank" rel="noopener">https://github.com/lijiejie/BBScan</a> ）<br>（6）GSIL（也是一位巨佬写的python脚本：<a href="https://github.com/FeeiCN/GSIL" target="_blank" rel="noopener">https://github.com/FeeiCN/GSIL</a> ）<br>（7）社交平台（有事没事多加一些QQ群）  </p>
+<h2 id="七、目标域名邮箱收集"><a href="#七、目标域名邮箱收集" class="headerlink" title="七、目标域名邮箱收集"></a>七、目标域名邮箱收集</h2><p>一定要养成收集站点邮箱账号收集的习惯（因为好多官方后台都是用内部邮箱账号登录的，指不定哪天你就得到一个进后台的机会）。<br>（1）通过说明文档以及网站页面收集，或者网站发表者以及留言板信息处收集账号<br>（2）通过 teemo，metago，burpusit，awvs，netspker 或者 google 语法收集<br>（3）搜索相关 QQ 群收集相关企业员工的社交账号<br>用途： 可用来进行爆破或者弱口令登录以及撞裤攻击。  </p>
+<h2 id="八、WAF探测"><a href="#八、WAF探测" class="headerlink" title="八、WAF探测"></a>八、WAF探测</h2><p>Waf也叫Web应用防火墙，是通过执行一系列针对HTTP/HTTPS的安全策略来专门为Web应用提供保护的一款产品。Waf的探测很多人都会忽略掉，其实当我们遇到Waf，第一想法是溜了溜了、告辞告辞（我是这样，别赞，要脸）。但当我们知道是什么Waf时，又有种去绕过它的冲动，很多大牛都喜欢挑战Waf，于是网上就出现了很多绕过Waf的教学视频。毕竟成功绕过之后的那种自豪感真的真的很舒服。<br>我常用的两种方式：<br>（1）手工（提交恶意数据，简单粗暴）<br>（2）Kaili工具（WAFW00F、Nmap）  </p>
+<p>Nmap探测WAF有两种脚本，<br>&nbsp; &nbsp; &nbsp;一种是http-waf-detect，命令：nmap  -p80,443  –script=http-waf-detect  ip<br>&nbsp; &nbsp; &nbsp; 一种是http-waf-fingerprint。命令：nmap  -p80,443  –script=http-waf-fingerprint  ip  </p>
+<p>WAFW00F 探测 WAF 命令：wafw00f  -a  域名<br><img src="/2019/11/22/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/8.png" alt="8"></p>
+<h2 id="九、旁站、C段"><a href="#九、旁站、C段" class="headerlink" title="九、旁站、C段"></a>九、旁站、C段</h2><p>旁站：是和目标网站在同一台服务器上的其它的网站。<br>C端：是和目标服务器ip处在同一个C段的其它服务器。<br>旁站和C段的查询方式：<br>（1）利用Bing.com，语法为：<a href="http://cn.bing.com/search?q=ip:111.111.111.111" target="_blank" rel="noopener">http://cn.bing.com/search?q=ip:111.111.111.111</a><br>（2）站长之家：<a href="http://s.tool.chinaz.com/same" target="_blank" rel="noopener">http://s.tool.chinaz.com/same</a><br>（3）利用Google，语法：site:125.125.125.*<br>（4）利用Nmap，语法：nmap -p 80,8080 –open ip/24<br>（5）K8工具、御剑、北极熊扫描器等<br>（6）在线：<a href="http://www.webscan.cc/" target="_blank" rel="noopener">http://www.webscan.cc/</a><br><img src="/2019/11/22/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93/9.png" alt="9"></p>
+<p>最后，附上几个常用的搜索引擎：<br>ZoomEy：<a href="https://www.zoomeye.org/" target="_blank" rel="noopener">https://www.zoomeye.org/</a><br>FoFa：<a href="https://fofa.so/" target="_blank" rel="noopener">https://fofa.so/</a><br>Dnsdb：<a href="https://www.dnsdb.io/zh-cn/" target="_blank" rel="noopener">https://www.dnsdb.io/zh-cn/</a><br>Shodam：<a href="https://www.shodan.io/" target="_blank" rel="noopener">https://www.shodan.io/</a><br>Censys：<a href="https://censys.io/" target="_blank" rel="noopener">https://censys.io/</a><br>御剑全家桶：<a href="http://www.moonsec.com/post-753.html" target="_blank" rel="noopener">http://www.moonsec.com/post-753.html</a>   </p>
+]]></content>
       <categories>
         <category>渗透测试</category>
       </categories>
+      <tags>
+        <tag>信息收集</tag>
+      </tags>
   </entry>
 </search>
