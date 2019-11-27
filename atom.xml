@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-11-23T15:36:51.989Z</updated>
+  <updated>2019-11-27T03:12:28.293Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我的博客</title>
+    <link href="http://yoursite.com/2019/11/27/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://yoursite.com/2019/11/27/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/</id>
+    <published>2019-11-27T03:02:39.000Z</published>
+    <updated>2019-11-27T03:12:28.293Z</updated>
+    
+    <content type="html"><![CDATA[<p>在您浏览本博客的内容前，请仔细阅读本篇内容！谢谢</p><a id="more"></a><p>为了记录一些笔记，方便自己记忆，也为了后来人少走一些坑，开启了我的个人博客！</p><p>由于某些不可抗拒的因素，也为了避免不必要的麻烦，特此声明：</p><ul><li>由于传播、利用本博客所提供的信息而造成的任何直接或间接的后果及损失，均由使用者本人负责，博主不承担任何责任。</li><li>博主拥有对本博客所有内容的修改和解释权。如欲转载或传播文章，必须保证文章的完整性，包括版权声明等全部内容。未经博主允许，不得任意修改或者增减文章内容，不得以任何方式将其用于商业目的。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在您浏览本博客的内容前，请仔细阅读本篇内容！谢谢&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="杂谈" scheme="http://yoursite.com/categories/%E6%9D%82%E8%B0%88/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>信息收集思路总结</title>
