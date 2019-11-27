@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Harbor任意管理员注册漏洞(CVE-2019-16097)复现</title>
+    <url>/2019/11/27/Harbor%E4%BB%BB%E6%84%8F%E7%AE%A1%E7%90%86%E5%91%98%E6%B3%A8%E5%86%8C%E6%BC%8F%E6%B4%9E-CVE-2019-16097-%E5%A4%8D%E7%8E%B0/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>漏洞复现</category>
+      </categories>
+      <tags>
+        <tag>CVE</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>我的博客</title>
     <url>/2019/11/27/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
     <content><![CDATA[<p>在您浏览本博客的内容前，请仔细阅读本篇内容！谢谢</p>
