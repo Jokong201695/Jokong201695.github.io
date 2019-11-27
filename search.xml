@@ -21,7 +21,7 @@
 <p>msf5 exploit(windows/rdp/cve_2019_0708_bluekeep_rce) &gt;show options<br><img src="/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/7.jpg" alt="7"></p>
 <p>msf5 exploit(windows/rdp/cve_2019_0708_bluekeep_rce) &gt;run<br><img src="/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/8.jpg" alt="8"></p>
 <p>执行whoami<br><img src="/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/9.jpg" alt="9"></p>
-<p>这种情况是把虚拟机打蓝屏了，此时，关机重启，多试几次。哈哈哈哈哈！（鬼知道我打蓝屏了多少次）<br><img src="/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/10.jpg" alt="10"><br><img src="/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/11.jpg" alt="11"></p>
+<h3 id="遇到的坑"><a href="#遇到的坑" class="headerlink" title="遇到的坑"></a>遇到的坑</h3><p>这种情况是把虚拟机打蓝屏了，此时，关机重启，多试几次。哈哈哈哈哈！（鬼知道我打蓝屏了多少次）<br><img src="/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/10.jpg" alt="10"><br><img src="/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/11.jpg" alt="11"></p>
 <p>修复建议：<br>安装微软为2019-0708推出的专用补丁：<br><a href="https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2019-0708" target="_blank" rel="noopener">https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2019-0708</a></p>
 ]]></content>
       <categories>
